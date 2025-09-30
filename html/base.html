@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用 base 标签的 HTML 示例</title>
+
+    <!-- 1. base 标签的用法：
+         - href 属性指定了相对 URL 的基础路径。
+         - target 属性指定所有链接的打开方式。-->
+    <base href="https://www.example.com/" target="_blank">
+
+    <!-- 示例：链接会相对于 base 标签指定的 href 路径 -->
+</head>
+<body>
+
+    <h1>欢迎使用 base 标签的示例</h1>
+    <p>点击以下链接会跳转到指定的目标页面，并且所有的链接会在新标签页中打开。</p>
+    
+    <!-- 2. 相对链接
+         - 使用相对路径的链接，在 base 标签设置的基础路径下解析。 -->
+    <a href="about.html">关于我们</a> <br>
+    <a href="contact.html">联系我们</a> <br>
+
+    <!-- 3. 图片链接也是相对路径，会基于 base 标签指定的路径 -->
+    <img src="images/logo.png" alt="公司 Logo">
+
+    <!-- 4. 外部 CSS 文件的链接，也会根据 base 标签的路径解析 -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- 5. 外部 JavaScript 文件的链接 -->
+    <script src="scripts/main.js"></script>
+
+    <!-- 注意：
+        - 所有的相对链接都会以 "https://www.example.com/" 为基础路径解析。
+        - 例如，<a href="about.html">关于我们</a> 会被解析为 https://www.example.com/about.html -->
+</body>
+</html>

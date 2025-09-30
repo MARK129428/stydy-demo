@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML <link> 标签示例</title>
+    
+    <!-- 引入外部 CSS 文件 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 用于加载页面的外部样式文件 -->
+
+    <!-- 设置网站图标（favicon） -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- 设置网页的图标，通常显示在浏览器标签栏 -->
+
+    <!-- 预加载资源（提高性能） -->
+    <link rel="preload" href="image.jpg" as="image"> <!-- 提前加载网页中使用到的图片，优化页面加载速度 -->
+
+    <!-- 引入外部字体文件（例如 Google Fonts） -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"> 
+    <!-- 加载 Google Fonts 上的 Roboto 字体，以便在网页中使用 -->
+
+    <!-- 指定 Web 应用清单文件（PWA） -->
+    <link rel="manifest" href="manifest.json"> <!-- 引入一个 Web 应用清单文件，用于 Progressive Web App -->
+
+    <!-- DNS 预解析（优化页面加载速度） -->
+    <link rel="dns-prefetch" href="//example.com"> <!-- 告诉浏览器提前解析外部资源的域名，提高加载速度 -->
+
+    <!-- 指示“下一页”的链接，用于分页 -->
+    <link rel="next" href="page2.html"> <!-- 指示当前页面的下一页地址 -->
+
+    <!-- 指示“上一页”的链接，用于分页 -->
+    <link rel="prev" href="page1.html"> <!-- 指示当前页面的上一页地址 -->
+</head>
+<body>
+
+    <h1>HTML <link> 标签示例</h1>
+    <p>该页面展示了如何使用 <code>&lt;link&gt;</code> 标签引入外部资源。</p>
+
+    <!-- 页面内容 -->
+
+</body>
+</html>

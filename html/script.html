@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLscript  标签示例</title>
+
+    <!-- 1. 外部JavaScript文件，使用 defer 属性： 
+         该属性表示脚本在页面的 HTML 内容解析完毕后才执行，不会阻塞页面的加载。 -->
+    <script src="external.js" defer></script>
+    
+    <!-- 2. 外部JavaScript文件，使用 async 属性：
+         该属性表示脚本会异步加载并执行，脚本加载时不会阻塞页面渲染。
+         注意：异步加载的脚本执行顺序无法保证。 -->
+    <script src="async-script.js" async></script>
+
+    <!-- 3. 使用模块化 JavaScript（type="module"）：
+         这种方式支持现代 JavaScript 模块化，能让我们导入和导出函数等内容，使代码更模块化、更有组织。
+         下面是一个例子，通过 import 语法从 greet.js 文件中导入 greet 函数。 -->
+    <script type="module">
+        // 导入 greet.js 文件中的 greet 函数
+        import { greet } from './greet.js';  // 假设 greet.js 文件在同一目录下
+        greet();  // 调用 greet 函数
+    </script>
+
+</head>
+<body>
+
+    <!-- 4. 页面中的标题和按钮 -->
+    <h1>欢迎来到 JavaScript 示例页面</h1>
+    <!-- 当按钮被点击时，调用 changeText 函数来改变页面标题 -->
+    <button onclick="changeText()">点击改变标题文本</button>
+
+    <!-- 5. 内联JavaScript：直接在 <script> 标签中写 JavaScript 代码 -->
+    <script>
+        // 在页面加载时，控制台打印一条消息
+        console.log("页面加载完毕，内联JavaScript正在运行");
+
+        // 定义一个函数：changeText
+        // 这个函数会改变页面标题的文本
+        function changeText() {
+            // 获取页面中的 <h1> 元素，并修改它的文本内容
+            document.querySelector('h1').textContent = '标题已被改变！';
+        }
+    </script>
+
+    <!-- 6. 外部JavaScript文件示例：
+         如果你有一个外部的 JavaScript 文件，比如 "script.js"，
+         可以通过 <script src="script.js"></script> 引入它。-->
+    <!-- <script src="script.js"></script> -->
+    <!-- 这里暂时注释掉了这行，如果你有文件，可以去掉注释来使用。 -->
+
+</body>
+</html>
