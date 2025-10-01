@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS 背景笔记示例</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 20px; }
+  h2 { margin-top: 20px; color: #34495e; }
+
+  .demo-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  /* 1. 背景颜色 */
+  .bg-red { background-color: red; color: white; }
+  .bg-gradient { 
+    background: linear-gradient(to right, #ff7e5f, #feb47b); 
+    color: white; 
+  }
+
+  /* 2. 背景图片 */
+  .bg-image { 
+    background-image: url('./1.jpg'); 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: cover; 
+    height: 200px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 3. 多背景叠加 */
+  .bg-multiple {
+    background-image: 
+      url('./1.jpg'),
+      linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(0,0,0,0.5));
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 4. 雪碧图示例 */
+  .sprite {
+    width: 50px;
+    height: 50px;
+    background-image: url('./sprite.png'); /* 假设有sprite.png */
+    background-position: -50px -0px; /* 显示第二个图标 */
+  }
+
+  /* 5. base64 示例 */
+  .bg-base64 {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAAAK0lEQVQYV2NkYGBg+M+ACzAxMjAwMDAwMLCwsDAwMDAyMTAwMDAwAAAfDgE/5UQ3OAAAAABJRU5ErkJggg=='); 
+    width: 50px;
+    height: 50px;
+  }
+</style>
+</head>
+<body>
+
+<h1>CSS 背景笔记示例</h1>
+
+<section>
+  <h2>1. 背景颜色</h2>
+  <div class="demo-box bg-red">红色背景示例</div>
+  <div class="demo-box bg-gradient">线性渐变背景示例</div>
+</section>
+
+<section>
+  <h2>2. 背景图片</h2>
+  <div class="demo-box bg-image">背景图片示例（cover）</div>
+  <div class="demo-box bg-multiple">多背景叠加示例</div>
+</section>
+
+<section>
+  <h2>3. 雪碧图示例</h2>
+  <div class="demo-box">
+    <div class="sprite"></div>
+    <span>显示雪碧图中某个图标</span>
+  </div>
+</section>
+
+<section>
+  <h2>4. base64 示例</h2>
+  <div class="demo-box">
+    <div class="bg-base64"></div>
+    <span>使用 base64 的小图标</span>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS box-shadow 笔记示例</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 20px; }
+  h2 { margin-top: 20px; color: #34495e; }
+
+  .demo-box {
+    width: 200px;
+    height: 100px;
+    margin-bottom: 20px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+
+  /* 1. 基本阴影 */
+  .shadow-basic { box-shadow: 5px 5px 10px gray; }
+
+  /* 2. 内阴影 */
+  .shadow-inset { box-shadow: inset 5px 5px 10px rgba(0,0,0,0.5); }
+
+  /* 3. 多重阴影 */
+  .shadow-multiple { 
+    box-shadow: 3px 3px 5px red, -3px -3px 5px blue; 
+  }
+
+  /* 4. 扩展阴影半径和模糊 */
+  .shadow-blur {
+    box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.5);
+  }
+
+</style>
+</head>
+<body>
+
+<h1>CSS box-shadow 笔记示例</h1>
+
+<section>
+  <h2>1. 基本阴影</h2>
+  <div class="demo-box shadow-basic">基础阴影</div>
+</section>
+
+<section>
+  <h2>2. 内阴影 (inset)</h2>
+  <div class="demo-box shadow-inset">内阴影</div>
+</section>
+
+<section>
+  <h2>3. 多重阴影</h2>
+  <div class="demo-box shadow-multiple">多重阴影</div>
+</section>
+
+<section>
+  <h2>4. 模糊和扩展半径</h2>
+  <div class="demo-box shadow-blur">模糊 + 扩展</div>
+</section>
+
+<p>说明：</p>
+<ul>
+  <li><code>box-shadow: offset-x offset-y blur-radius spread-radius color inset?</code></li>
+  <li>offset-x / offset-y：水平 / 垂直偏移</li>
+  <li>blur-radius：模糊半径（可选）</li>
+  <li>spread-radius：阴影扩展半径（可选）</li>
+  <li>color：阴影颜色</li>
+  <li>inset：可选，表示内阴影</li>
+  <li>多个阴影可用逗号分隔</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS 边框笔记示例</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 20px; }
+  h2 { margin-top: 20px; color: #34495e; }
+
+  .demo-box {
+    border: 2px solid #333;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  /* 1. 边框基础 */
+  .border-solid { border: 4px solid red; }
+  .border-dashed { border: 4px dashed green; }
+  .border-dotted { border: 4px dotted blue; }
+
+  /* 2. 边框图片示例 */
+  .border-image-demo {
+    border-width: 20px;
+    border-style: solid;
+    border-image: url('https://i.imgur.com/8h3Jq3N.png') 30 round; /* 示例图片 */
+    width: 200px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  /* 3. 异形边框示例 */
+  /* 三角形 */
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid orange;
+    margin-bottom: 20px;
+  }
+
+  /* 梯形 */
+  .trapezoid {
+    width: 150px;
+    height: 0;
+    border-bottom: 80px solid #3498db;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    margin-bottom: 20px;
+  }
+
+  /* 圆角三角形 */
+  .triangle-rounded {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid orange;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* 扇形 */
+  .fan-shape {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    transform: rotate(45deg);
+    margin-bottom: 20px;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>CSS 边框属性笔记示例</h1>
+
+<section>
+  <h2>1. 边框基础属性</h2>
+  <div class="demo-box border-solid">solid 实线边框</div>
+  <div class="demo-box border-dashed">dashed 虚线边框</div>
+  <div class="demo-box border-dotted">dotted 点状边框</div>
+</section>
+
+<section>
+  <h2>2. 使用 border-image 设置图片边框</h2>
+  <div class="border-image-demo"></div>
+  <p>通过 border-image 可以使用图片作为边框，并通过切片和缩放控制边框显示。</p>
+</section>
+
+<section>
+  <h2>3. 异形边框创建</h2>
+  <div class="triangle"></div>
+  <p>使用透明边框创建三角形。</p>
+
+  <div class="trapezoid"></div>
+  <p>通过透明边框创建梯形。</p>
+
+  <div class="triangle-rounded"></div>
+  <p>为三角形加圆角，改变形状效果。</p>
+
+  <div class="fan-shape"></div>
+  <p>通过圆角和旋转创建扇形。</p>
+</section>
+
+</body>
+</html>

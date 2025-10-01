@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS text-shadow 笔记示例</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 20px; }
+  h2 { margin-top: 20px; color: #34495e; }
+
+  .demo-box {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  /* 1. 基本文字阴影 */
+  .shadow-basic { text-shadow: 2px 2px 2px gray; }
+
+  /* 2. 模糊效果 */
+  .shadow-blur { text-shadow: 3px 3px 5px rgba(0,0,0,0.5); }
+
+  /* 3. 多重文字阴影 */
+  .shadow-multiple { 
+    text-shadow: 2px 2px 2px red, -2px -2px 2px blue; 
+  }
+
+  /* 4. 彩色文字阴影 */
+  .shadow-color { text-shadow: 2px 2px 2px orange, 4px 4px 4px purple; }
+
+</style>
+</head>
+<body>
+
+<h1>CSS text-shadow 笔记示例</h1>
+
+<section>
+  <h2>1. 基本文字阴影</h2>
+  <div class="demo-box shadow-basic">基础文字阴影</div>
+</section>
+
+<section>
+  <h2>2. 模糊效果</h2>
+  <div class="demo-box shadow-blur">模糊文字阴影</div>
+</section>
+
+<section>
+  <h2>3. 多重文字阴影</h2>
+  <div class="demo-box shadow-multiple">多重文字阴影</div>
+</section>
+
+<section>
+  <h2>4. 彩色文字阴影</h2>
+  <div class="demo-box shadow-color">彩色文字阴影</div>
+</section>
+
+<p>说明：</p>
+<ul>
+  <li><code>text-shadow: offset-x offset-y blur-radius color;</code></li>
+  <li>offset-x / offset-y：水平 / 垂直偏移</li>
+  <li>blur-radius：模糊半径（可选）</li>
+  <li>color：阴影颜色</li>
+  <li>多重阴影用逗号分隔</li>
+</ul>
+
+</body>
+</html>

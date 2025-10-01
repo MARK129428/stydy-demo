@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>网络字体切换示例</title>
+
+  <!-- 引入网络字体：Alibaba 普惠体（via OnlineWebFonts） -->
+  <link href="https://db.onlinewebfonts.com/c/70e85e06a6ea3fbd5e4030df68874fff?family=Alibaba+PuHuiTi+2.0+55+Regular" rel="stylesheet">
+
+  <!-- 引入网络字体：思源黑体 / Noto Sans CJK（如果你选择从 Google / Adobe / 镜像源引入） -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      padding: 20px;
+      line-height: 1.8;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .demo-box {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+    }
+
+    select {
+      margin-top: 10px;
+      padding: 5px;
+    }
+
+    /* 如果使用 @font-face（备用写法） */
+    @font-face {
+      font-family: "AlibabaPuHui";
+      src: url("https://db.onlinewebfonts.com/t/70e85e06a6ea3fbd5e4030df68874fff.woff2") format("woff2"),
+           url("https://db.onlinewebfonts.com/t/70e85e06a6ea3fbd5e4030df68874fff.woff") format("woff"),
+           url("https://db.onlinewebfonts.com/t/70e85e06a6ea3fbd5e4030df68874fff.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "NotoSansTC";
+      src: local("Noto Sans TC"), 
+           url("https://fonts.gstatic.com/s/notosanstc/v21/-W_6XJ5baP_f0ok1c_kBOtYzZkDsfQ.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>网络字体切换示例</h1>
+
+  <div class="demo-box" id="demo">
+    这是一个用于演示网络字体切换的段落。<br>
+    This is a sample paragraph to demonstrate switching web fonts.
+  </div>
+
+  <label for="fontSelector">选择字体: </label>
+  <select id="fontSelector">
+    <option value="Arial, sans-serif">系统默认 Arial</option>
+    <option value="AlibabaPuHui, sans-serif">Alibaba 普惠体</option>
+    <option value="NotoSansTC, sans-serif">Noto Sans TC / 思源黑体</option>
+    <option value="'Courier New', monospace">Courier New（等宽字体）</option>
+  </select>
+
+  <script>
+    const demo = document.getElementById("demo");
+    const selector = document.getElementById("fontSelector");
+    selector.addEventListener("change", function () {
+      demo.style.fontFamily = this.value;
+    });
+  </script>
+</body>
+</html>

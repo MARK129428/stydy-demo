@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS 边框图片笔记示例</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 20px; }
+  h2 { margin-top: 20px; color: #34495e; }
+
+  .demo-box {
+    border: 2px solid #333;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  /* 1. 九宫格概念示例（简单展示） */
+  .nine-grid {
+    width: 200px;
+    height: 200px;
+    border-width: 30px;  /* 边框宽度 */
+    border-style: solid;
+    border-color: transparent; /* 边框透明 */
+    /* 使用图片作为边框 */
+    border-image: url('./1.jpg') 30 fill round;
+    /* slice: 30px，fill: 填充中间，round: 保证图案整除 */
+    margin-bottom: 20px;
+  }
+
+  /* 2. 对比 repeat 和 round */
+  .border-repeat {
+    width: 200px;
+    height: 100px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: url('./1.jpg') 20 repeat; /* 图案重复填充 */
+    margin-bottom: 20px;
+  }
+
+  .border-round {
+    width: 200px;
+    height: 100px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: url('./1.jpg') 20 round; /* 图案整除填充 */
+    margin-bottom: 20px;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>CSS 边框使用图片笔记示例</h1>
+
+<section>
+  <h2>1. 九宫格概念与 border-image</h2>
+  <p>九宫格通过将边框分为九个区域（四角、四边、中间）来显示图片边框，CSS3 的 <code>border-image</code> 实现了同样效果，无需额外 div 或表格。</p>
+  <div class="nine-grid">九宫格边框示例</div>
+</section>
+
+<section>
+  <h2>2. border-image 属性控制</h2>
+  <p>指定边框宽度、透明边框，并用图片作为边框。</p>
+  <div class="border-repeat">border-image repeat 示例（图案重复填充）</div>
+  <div class="border-round">border-image round 示例（图案整除填充，避免边缘不完整）</div>
+</section>
+
+<p>说明：</p>
+<ul>
+  <li><code>border-width</code>：定义边框宽度，对应图片切片大小。</li>
+  <li><code>border-style</code>：必须指定，否则 border-image 无效。</li>
+  <li><code>border-color</code>：可透明，显示图片边框。</li>
+  <li><code>border-image-slice</code>：切割图片九宫格区域。</li>
+  <li><code>repeat</code>：边框图案重复填充边框长度。</li>
+  <li><code>round</code>：边框图案整除填充，避免边缘不完整。</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 行高与图片对齐笔记</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      color: #222;
+    }
+
+    h1 { font-size: 26px; margin-bottom: 20px; }
+    h2 { margin-top: 20px; color: #34495e; }
+
+    .demo-box {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+    }
+
+    /* 行高示例 */
+    .line-normal { font-size: 16px; line-height: normal; background: #f0f8ff; }
+    .line-1_5 { font-size: 16px; line-height: 1.5; background: #fefbd8; }
+    .line-40px { font-size: 16px; line-height: 40px; background: #e6ffe6; }
+
+    /* 图片示例 */
+    .img-demo img { height: 32px; background: #ddd; margin-right: 5px; }
+
+    /* vertical-align 示例 */
+    .baseline { vertical-align: baseline; }
+    .middle { vertical-align: middle; }
+    .top { vertical-align: top; }
+    .bottom { vertical-align: bottom; }
+    .text-bottom { vertical-align: text-bottom; }
+    .text-top { vertical-align: text-top; }
+    .block { display: block; margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+
+<h1>CSS 行高与图片对齐笔记</h1>
+
+<section>
+  <h2>1. 行高基础示例</h2>
+  <div class="demo-box line-normal">
+    line-height: normal;<br>
+    默认行高，通常约 1.2~1.4 倍字体大小
+  </div>
+  <div class="demo-box line-1_5">
+    line-height: 1.5;<br>
+    常用推荐行高，阅读更舒适
+  </div>
+  <div class="demo-box line-40px">
+    line-height: 40px;<br>
+    固定行高，不随字体大小变化
+  </div>
+</section>
+
+<section>
+  <h2>2. 行高与图片的关系</h2>
+  <p>图片默认是 <code>inline</code> 元素，会受行高影响，默认与文字基线对齐。</p>
+
+  <div class="demo-box img-demo line-40px">
+    <img src="./1.jpg" class="baseline"> baseline 对齐<br>
+    <img src="./1.jpg" class="middle"> middle 对齐<br>
+    <img src="./1.jpg" class="top"> top 对齐<br>
+    <img src="./1.jpg" class="bottom"> bottom 对齐<br>
+    <img src="./1.jpg" class="text-top"> text-top 对齐<br>
+    <img src="./1.jpg" class="text-bottom"> text-bottom 对齐<br>
+    <img src="./1.jpg" class="block"> block 元素，不受行高影响
+  </div>
+
+  <p>注意：</p>
+  <ul>
+    <li>当图片在行内时，如果 <code>line-height</code> 比图片小，会撑高整行。</li>
+    <li>底部空隙来源于 inline 元素默认 baseline 对齐。</li>
+    <li>解决方式：
+      <ul>
+        <li>使用 <code>vertical-align</code> 调整图片位置（如 middle/top/bottom/text-top/text-bottom）</li>
+        <li>将图片改为 <code>display: block</code></li>
+        <li>使用 flex 布局让图片和文字垂直居中</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+</body>
+</html>

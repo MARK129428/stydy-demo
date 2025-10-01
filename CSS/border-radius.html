@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS border-radius 笔记示例</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 20px; }
+  h2 { margin-top: 20px; color: #34495e; }
+
+  .demo-box {
+    width: 150px;
+    height: 100px;
+    margin-bottom: 20px;
+    background: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* 1. 基本圆角 */
+  .radius-10 { border-radius: 10px; }
+
+  /* 2. 单边圆角 */
+  .radius-top-left { border-top-left-radius: 20px; }
+  .radius-top-right { border-top-right-radius: 20px; }
+  .radius-bottom-left { border-bottom-left-radius: 20px; }
+  .radius-bottom-right { border-bottom-right-radius: 20px; }
+
+  /* 3. 椭圆形圆角 */
+  .radius-ellipse { border-radius: 50px / 20px; }
+
+  /* 4. 多值组合 */
+  .radius-multi { border-radius: 10px 30px 50px 70px; }
+
+  /* 5. 与阴影配合 */
+  .radius-shadow { border-radius: 20px; box-shadow: 5px 5px 10px rgba(0,0,0,0.5); }
+
+</style>
+</head>
+<body>
+
+<h1>CSS border-radius 笔记示例</h1>
+
+<section>
+  <h2>1. 基本圆角</h2>
+  <div class="demo-box radius-10">border-radius: 10px</div>
+</section>
+
+<section>
+  <h2>2. 单边圆角</h2>
+  <div class="demo-box radius-top-left">top-left</div>
+  <div class="demo-box radius-top-right">top-right</div>
+  <div class="demo-box radius-bottom-left">bottom-left</div>
+  <div class="demo-box radius-bottom-right">bottom-right</div>
+</section>
+
+<section>
+  <h2>3. 椭圆形圆角</h2>
+  <div class="demo-box radius-ellipse">border-radius: 50px / 20px</div>
+</section>
+
+<section>
+  <h2>4. 多值组合</h2>
+  <div class="demo-box radius-multi">10px 30px 50px 70px</div>
+</section>
+
+<section>
+  <h2>5. 与阴影配合</h2>
+  <div class="demo-box radius-shadow">圆角 + 阴影</div>
+</section>
+
+<p>说明：</p>
+<ul>
+  <li>border-radius 可设置单边、多个值或椭圆形圆角</li>
+  <li>语法：
+    <ul>
+      <li>单值：所有角统一圆角</li>
+      <li>四值组合：上左、上右、下右、下左</li>
+      <li>椭圆：水平半径 / 垂直半径</li>
+    </ul>
+  </li>
+  <li>可与阴影、边框等配合增强视觉效果</li>
+</ul>
+
+</body>
+</html>

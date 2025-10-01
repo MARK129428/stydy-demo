@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 选择器笔记 (清晰版)</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #ffffff;
+      margin: 20px;
+      line-height: 1.8;
+      font-size: 16px;
+      color: #222;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #2c3e50;
+    }
+    h2 {
+      margin-top: 0;
+      color: #34495e;
+    }
+    section {
+      background: #fdfdfd;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+    code {
+      background: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      color: #d63384;
+      font-size: 15px;
+    }
+    pre {
+      background: #f7f7f7;
+      color: #111;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.6;
+      border: 1px solid #ddd;
+    }
+    /* ---------- 示例样式 ---------- */
+    .demo-box {
+      padding: 12px;
+      border: 1px dashed #bbb;
+      margin-top: 12px;
+      border-radius: 6px;
+      background: #fcfcfc;
+    }
+    .demo-box p { margin: 6px 0; padding: 4px; }
+    .demo-box input { margin: 6px 0; padding: 4px; }
+
+    /* 基础选择器示例 */
+    .demo-box .highlight { color: #e74c3c; font-weight: bold; }
+    #special { color: #2980b9; font-weight: bold; }
+
+    /* 组合选择器示例 */
+    .combo-demo div p { color: green; }
+    .combo-demo div > p { background: #d0f0f0; }
+    .combo-demo h1 + p { color: orange; }
+    .combo-demo h1 ~ p { font-style: italic; }
+
+    /* 属性选择器示例 */
+    input[type="text"] { border: 2px solid #42a5f5; }
+    input[type="password"] { border: 2px solid #ef5350; }
+
+    /* 伪类示例 */
+    .state-demo a:link { color: blue; }
+    .state-demo a:visited { color: purple; }
+    .state-demo a:hover { color: red; }
+    .state-demo a:active { color: green; }
+    .list-demo li:first-child { color: red; }
+    .list-demo li:last-child { color: blue; }
+    .list-demo li:nth-child(odd) { background: #f8f9fa; }
+    .list-demo li:not(.skip) { font-weight: bold; }
+
+    /* 伪元素示例 */
+    .pseudo-demo p::before { content: "👉 "; color: orange; }
+    .pseudo-demo p::after { content: " 👈"; color: orange; }
+    .pseudo-demo p::first-letter { font-size: 1.5em; color: red; }
+    .pseudo-demo p::selection { background: yellow; }
+  </style>
+</head>
+<body>
+  <h1>CSS 选择器笔记 (清晰版)</h1>
+
+  <section>
+    <h2>1. 基础选择器</h2>
+    <pre><code>.highlight { color: red; }
+#special { color: blue; }</code></pre>
+    <div class="demo-box">
+      <p class="highlight">这是类选择器 .highlight</p>
+      <p id="special">这是ID选择器 #special</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. 组合选择器</h2>
+    <pre><code>div p { color: green; }
+div > p { background: #d0f0f0; }
+h1 + p { color: orange; }
+h1 ~ p { font-style: italic; }</code></pre>
+    <div class="demo-box combo-demo">
+      <h1>标题</h1>
+      <p>紧跟标题的段落（h1 + p）</p>
+      <p>同级其他段落（h1 ~ p）</p>
+      <div>
+        <p>div > p 选中</p>
+        <span><p>这个不会被选中（不是直接子元素）</p></span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. 属性选择器</h2>
+    <pre><code>input[type="text"] { border: 2px solid blue; }
+input[type="password"] { border: 2px solid red; }</code></pre>
+    <div class="demo-box">
+      <input type="text" placeholder="文本输入框">
+      <input type="password" placeholder="密码输入框">
+    </div>
+  </section>
+
+  <section>
+    <h2>4. 伪类选择器</h2>
+    <pre><code>a:hover { color: red; }
+li:first-child { color: red; }
+li:last-child { color: blue; }
+li:nth-child(odd) { background: #f8f9fa; }
+li:not(.skip) { font-weight: bold; }</code></pre>
+    <div class="demo-box state-demo">
+      <a href="#">这是一个链接（试试 hover、click）</a>
+    </div>
+    <div class="demo-box">
+      <ul class="list-demo">
+        <li>第1个 (first-child)</li>
+        <li>第2个</li>
+        <li class="skip">第3个 (not 规则排除)</li>
+        <li>第4个</li>
+        <li>第5个 (last-child)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. 伪元素选择器</h2>
+    <pre><code>p::before { content: "👉 "; }
+p::after { content: " 👈"; }
+p::first-letter { font-size: 1.5em; color: red; }
+p::selection { background: yellow; }</code></pre>
+    <div class="demo-box pseudo-demo">
+      <p>这是一个演示伪元素的段落</p>
+    </div>
+  </section>
+</body>
+</html>

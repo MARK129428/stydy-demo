@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS 动画笔记示例</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 20px; }
+  h2 { margin-top: 20px; color: #34495e; }
+
+  .demo-box {
+    width: 100px;
+    height: 100px;
+    background: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 8px;
+  }
+
+  /* 1. 平移动画 */
+  @keyframes moveRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(200px); }
+  }
+  .anim-move {
+    animation-name: moveRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  /* 2. 缩放动画 */
+  @keyframes scaleUp {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+  }
+  .anim-scale {
+    animation-name: scaleUp;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  /* 3. 旋转动画 */
+  @keyframes rotateAnim {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .anim-rotate {
+    animation-name: rotateAnim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>CSS 动画笔记示例</h1>
+
+<section>
+  <h2>1. 平移动画</h2>
+  <div class="demo-box anim-move">移动</div>
+</section>
+
+<section>
+  <h2>2. 缩放动画</h2>
+  <div class="demo-box anim-scale">缩放</div>
+</section>
+
+<section>
+  <h2>3. 旋转动画</h2>
+  <div class="demo-box anim-rotate">旋转</div>
+</section>
+
+<p>说明：</p>
+<ul>
+  <li><code>@keyframes</code> 定义动画关键帧</li>
+  <li>常用动画属性：
+    <ul>
+      <li><code>animation-name</code>：动画名称</li>
+      <li><code>animation-duration</code>：动画时长</li>
+      <li><code>animation-timing-function</code>：动画节奏函数，如 ease, linear, ease-in-out</li>
+      <li><code>animation-delay</code>：延迟启动时间</li>
+      <li><code>animation-iteration-count</code>：循环次数，infinite 为无限循环</li>
+      <li><code>animation-direction</code>：normal / reverse / alternate</li>
+      <li><code>animation-fill-mode</code>：控制动画结束状态</li>
+    </ul>
+  </li>
+</ul>
+
+</body>
+</html>

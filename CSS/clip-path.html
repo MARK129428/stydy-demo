@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS clip-path 笔记示例</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 20px; }
+  h2 { margin-top: 20px; color: #34495e; }
+
+  .demo-box {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 20px;
+    background: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* 1. 圆形裁剪 */
+  .clip-circle { 
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  /* 2. 椭圆裁剪 */
+  .clip-ellipse { 
+    clip-path: ellipse(60% 40% at 50% 50%);
+  }
+
+  /* 3. 内切矩形 */
+  .clip-inset { 
+    clip-path: inset(20px 30px 20px 30px);
+  }
+
+  /* 4. 多边形裁剪（三角形/梯形/五边形） */
+  .clip-polygon-triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  .clip-polygon-trapezoid {
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  }
+  .clip-polygon-pentagon {
+    clip-path: polygon(50% 0%, 95% 35%, 77% 100%, 23% 100%, 5% 35%);
+  }
+
+</style>
+</head>
+<body>
+
+<h1>CSS clip-path 笔记示例</h1>
+
+<section>
+  <h2>1. 圆形裁剪</h2>
+  <div class="demo-box clip-circle">circle</div>
+</section>
+
+<section>
+  <h2>2. 椭圆裁剪</h2>
+  <div class="demo-box clip-ellipse">ellipse</div>
+</section>
+
+<section>
+  <h2>3. 内切矩形裁剪</h2>
+  <div class="demo-box clip-inset">inset</div>
+</section>
+
+<section>
+  <h2>4. 多边形裁剪</h2>
+  <div class="demo-box clip-polygon-triangle">triangle</div>
+  <div class="demo-box clip-polygon-trapezoid">trapezoid</div>
+  <div class="demo-box clip-polygon-pentagon">pentagon</div>
+</section>
+
+<p>说明：</p>
+<ul>
+  <li><code>clip-path</code> 用于裁剪元素显示区域</li>
+  <li>常用值：
+    <ul>
+      <li>circle(radius at x y)</li>
+      <li>ellipse(rx ry at x y)</li>
+      <li>inset(top right bottom left)</li>
+      <li>polygon(x1 y1, x2 y2, ...)</li>
+    </ul>
+  </li>
+  <li>可以配合边框、阴影和背景图创造有趣效果</li>
+</ul>
+
+</body>
+</html>

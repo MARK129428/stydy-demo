@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CSS 文字折行属性笔记</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 26px; margin-bottom: 20px; }
+  h2 { margin-top: 20px; color: #34495e; }
+
+  .demo-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+
+  /* 1. white-space 属性 */
+  .nowrap { white-space: nowrap; background: #f0f8ff; }
+  .pre { white-space: pre; background: #fefbd8; }
+  .normal { white-space: normal; background: #e6ffe6; }
+
+  /* 2. word-break 属性 */
+  .break-all { word-break: break-all; background: #ffe6e6; }
+  .keep-all { word-break: keep-all; background: #fff0e6; }
+
+  /* 3. overflow-wrap 属性 */
+  .overflow-wrap { overflow-wrap: break-word; background: #f0f0f0; }
+
+</style>
+</head>
+<body>
+
+<h1>CSS 文字折行属性笔记示例</h1>
+
+<section>
+  <h2>1. white-space 属性</h2>
+  <div class="demo-box nowrap">
+    white-space: nowrap;<br>
+    文本不会换行，即使超出容器宽度也会延伸。
+  </div>
+  <div class="demo-box pre">
+    white-space: pre;<br>
+    保留空格和换行，类似 pre 标签显示。
+  </div>
+  <div class="demo-box normal">
+    white-space: normal;<br>
+    默认折行方式，文本遇到容器边界换行。
+  </div>
+</section>
+
+<section>
+  <h2>2. word-break 属性</h2>
+  <div class="demo-box break-all">
+    word-break: break-all;<br>
+    长单词或 URL 可以随意断行。
+    超长文字测试：abcdefghijklmnopqrstuvwxyz1234567890
+  </div>
+  <div class="demo-box keep-all">
+    word-break: keep-all;<br>
+    中文文字不会在单词中间断行，只在空格或标点处换行。
+    中文测试文本：这是一个很长的中文句子用于测试换行效果。
+  </div>
+</section>
+
+<section>
+  <h2>3. overflow-wrap (word-wrap) 属性</h2>
+  <div class="demo-box overflow-wrap">
+    overflow-wrap: break-word;<br>
+    当单词太长时，允许在必要时换行以防止溢出。
+    超长单词测试：averylongwordthatiswaytoolongtobefitinline
+  </div>
+</section>
+
+</body>
+</html>
